@@ -25,3 +25,6 @@ vim.keymap.set('n', "<leader>bn", vim.cmd.bnext)
 vim.keymap.set('n', "<leader>bp", vim.cmd.bprev)
 vim.keymap.set('n', "<leader>bd", vim.cmd.bdelete)
 vim.keymap.set('n', "<leader>bx", ":bdelete!<CR>")
+
+
+vim.keymap.set('n', "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

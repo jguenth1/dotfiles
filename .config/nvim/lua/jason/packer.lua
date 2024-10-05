@@ -54,6 +54,8 @@ return require('packer').startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'bluz71/vim-moonfly-colors'
   use 'Mofiqul/dracula.nvim'
+  use 'yorumicolors/yorumi.nvim'
+  use 'rebelot/kanagawa.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   
   -- Lualine

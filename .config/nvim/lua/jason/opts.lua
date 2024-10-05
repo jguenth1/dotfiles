@@ -26,3 +26,13 @@ vim.opt.splitbelow = true
 vim.opt.wrap = false
 vim.opt.formatoptions:remove {"c", "r", "o"}
 
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+augroup('wrapSetup', { clear = true })
+autocmd('Filetype', {
+    group = 'wrapSetup',
+    pattern = {'text', 'markdown'},
+    command = 'setlocal textwidth=0 wrapmargin=0 wrap linebreak',
+})
+

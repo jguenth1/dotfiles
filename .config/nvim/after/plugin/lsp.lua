@@ -20,7 +20,7 @@ vim.diagnostic.config {
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer", "gopls", "erlangls" },
+    ensure_installed = { "rust_analyzer", "erlangls" },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -31,10 +31,10 @@ require("mason-lspconfig").setup({
 })
 
 local lspconfig = require('lspconfig')
-lspconfig.hls.setup {
-    filetypes = { 'haskell', 'lhaskell', 'cabal' },
-}
-lspconfig.ocamllsp.setup {}
+-- lspconfig.hls.setup {
+--     filetypes = { 'haskell', 'lhaskell', 'cabal' },
+-- }
+-- lspconfig.ocamllsp.setup {}
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -49,7 +49,9 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<Tab>'] = cmp.mapping.confirm(cmp_select),
+        -- ['<Tab>'] = cmp.mapping.confirm(cmp_select),
+        ['<C-h>'] = cmp.mapping.confirm(cmp_select),
+        ['<C-l>'] = cmp.mapping.abort(),
         ['<C-Space>'] = cmp.mapping.complete(),
 
     }),
